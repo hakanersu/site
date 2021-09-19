@@ -67,4 +67,4 @@ before('deploy:symlink', 'artisan:migrate');
     run("cd {{release_path}} && supervisorctl restart all", ['timeout' => null, 'tty' => true]);
 }); */
 
-after('deploy', 'deploy:done');
+//after('deploy', 'deploy:done');
