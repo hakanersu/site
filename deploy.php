@@ -62,9 +62,9 @@ after('deploy:failed', 'deploy:unlock');
 
 before('deploy:symlink', 'artisan:migrate');
 
-task('deploy:done', function () {
+/* task('deploy:done', function () {
     write('Supervisor restarting services!');
     run("cd {{release_path}} && supervisorctl restart all", ['timeout' => null, 'tty' => true]);
-});
+}); */
 
 after('deploy', 'deploy:done');
