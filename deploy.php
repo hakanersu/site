@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 set('application', 'xuma');
 
 // Project repository
-set('repository', 'git@gitlab.bulutfon.com:sumasa.io/sumasa.git');
+set('repository', 'git@github.com:hakanersu/site.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
@@ -23,8 +23,8 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('95.173.187.229')
-    ->user('sumasa')
+host('199.247.17.153')
+    ->user('xuma')
     ->set('deploy_path', '~/{{application}}');
 
 task('yarn:build', function () {
