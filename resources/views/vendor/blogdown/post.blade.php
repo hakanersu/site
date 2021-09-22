@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <img class="mb-10" src="https://blog.elementary.io/images/elementary-os-6-odin-released/odin.png" alt="Feature image">
+    <img class="mb-10 rounded" src="{{ $post->image ?? 'https://source.unsplash.com/random' }}" alt="Feature image">
 
     <div class="max-w-4xl mx-auto prose lg:prose-xl">
         <div>

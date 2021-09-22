@@ -4,6 +4,7 @@ author: xuma
 date: 19.09.2021
 summary: Different approach to validate turkish identification number.
 tags: php, validation, go, rust
+image: /img/identification.jpg
 --}}
 
 ### What we are doing?
