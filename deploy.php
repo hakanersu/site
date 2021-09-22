@@ -28,9 +28,8 @@ host('199.247.17.153')
     ->set('deploy_path', '~/{{application}}');
 
 task('yarn:build', function () {
-    run("cd {{release_path}} && yarn && yarn dev", ['timeout' => null, 'tty' => true]);
+    run("cd {{release_path}} && yarn && yarn prod", ['timeout' => null, 'tty' => true]);
     write('Yarn build is done!');
-
 });
 
 
