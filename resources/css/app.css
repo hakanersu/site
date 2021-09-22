@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Bitter', serif;
+    font-size: 1.4rem;
+}
+html.dark body > header {
+    background: linear-gradient(180deg, rgba(50,50,50,1) 0%, rgba(42,42,42,1) 100%);
+    border-bottom: 1px solid #333333 !important;
+}
+html.dark .button {
+    background: linear-gradient(180deg, rgba(71,71,71,1) 0%, rgba(64,64,64,1) 100%);
+    border: 1px solid #ffffff1c;
+    outline: 1px solid #222222;
+}
+
+.prose p, .prose ul, .prose ol, .prose dl, .prose blockquote, .prose pre, .prose dialog{
+    font-size:1em; /* 13px */
+    line-height:1.3846em; /* 18px */
+    margin:0 0 1.3846em 0;
+}
+.prose p {
+    line-height: 1.8em;
+}
+.prose h1{
+    font-size:2.4615em; /* 32px */
+    line-height:1.125em; /* 36px */
+    margin-top:0.5625em;
+    margin-bottom:0em;
+}
+.prose h2{
+    font-size:1.5385em; /* 20px */
+    font-weight:normal;
+    line-height:1.8em; /* 36px */
+    margin-top:0.9em;
+    margin-bottom:0em;
+}
+.prose h3{
+    font-size: 1.2308em; /* 16px */
+    line-height: 1.125em; /* 18px */
+    margin-top: 1.125em;
+    margin-bottom: 1.125em;
+}
+.prose h4{
+    font-size:1.0769em; /* 14px */
+    line-height:1.2857em; /* 18px */
+    margin-top:1.2857em;
+    margin-bottom:0em;
+}
+.prose h5{
+    font-size:1em; /* 13px */
+    line-height:1.3846em; /* 18px */
+    margin:0;
+}
+.prose h6{
+    font-size:1em; /* 13px */
+    font-weight:normal;
+    font-variant:small-caps;
+    letter-spacing:2px;
+    line-height:1.3846em; /* 18px */
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.prose h1 a, .prose h2 a, .prose h3 a, .prose h4 a, .prose h5 a, .prose h6 a {
+    color: #fff;
+}
+.prose blockquote{border-left:3px solid rgba(221,221,221,.5);font-style:italic;padding-left:17px;}/* #DDD at .5 strength*/
+.prose pre,.prose code{font-family:monaco,"Courier New",Courier,monospace;font-size:0.8em;}
+.prose sup,.prose sub{font-size:0.7em;line-height:1em;vertical-align:baseline;}
+.prose sup{position:relative;top:-0.4em;}
+.prose sub{position:relative;top:0.4em;}
+
+.prose ol, .prose ul, .prose dd{margin-left:1.5em;}
+.prose ul{list-style:disc;}
+.prose li ul, .prose li ol{margin-bottom:0}
+.prose ol{list-style:decimal;}
+.prose dt{font-weight:bold;}
+
+a:link, a:visited{color:rgb(100, 186, 255);text-decoration:none;}
+a:hover, a:focus, a:active{color:rgb(105, 192, 255);text-decoration:underline;}
+
+.prose hr{
+    margin:1.3846em 0 1.308em 0;
+    height:0;
+    border:1px solid #888;
+    border-width:1px 0 0 0;
+}
+div.code-toolbar > .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+div.code-toolbar > .toolbar > .toolbar-item{
+    background-color: #859900;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #fff;
+}
+div.code-toolbar > .toolbar > .toolbar-item > a, div.code-toolbar > .toolbar > .toolbar-item > button, div.code-toolbar > .toolbar > .toolbar-item > span {
+    background: none;
+    box-shadow: none !important;
+    color: #fff;
+}
+.prose pre {
+    border: 4px solid #859900;
+}
+pre[class*="language-"] {
+    padding-top: 36px;
+}
+
+p > code {
+    background: #272822;
+    letter-spacing: -0.5px;
+    color: #fff;
+    padding: 4.5px 6px;
+    margin: 1px -1px;
+    background: rgba(115, 125, 140, 0.17) none repeat scroll 0% 0%;
+    border-radius: 3px;
+}
+pre code {
+    background: transparent;
+    font-style: normal;
+}
