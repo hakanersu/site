@@ -9,13 +9,13 @@ image:/img/identification.jpg
 
 ### What we are doing?
 
-Turkish Identification Number is a unique number that is assigned to every citizen of Turkey. We will try to validate turkish identification number with different approach than most of the examples you can find.
+Turkish Identification Number is a unique number that is assigned to every citizen of Turkey. We will try to validate Turkish identification number with a different approach than most of the examples you can find.
 
 If you want to just see the code you can skip [here](#:~:text=A%20different%20approach).
 
 ### Algorithm
 
-Turkish identification number is consisting of 11 digits. Last two digits are the verification digits. For calculating 10th digit we need to get sum of  1st, 3rd, 5th, 7th and 9th digits and multiple with `7` and lets call it `first part` than we need to get sum of 2nd, 4th, 6th and 8th digits and lets call it `second part`. Than we need to substract `second part` from `first part` and than when we divide it to 10 and it will give us 10th digit.
+The Turkish identification number is consisting of 11 digits. The last two digits are the verification digits. For calculating 10th digit we need to get sum of  1st, 3rd, 5th, 7th and 9th digits and multiple with `7` and let's call it `first part` then we need to get the sum of 2nd, 4th, 6th and 8th digits and let's call it `second part`. Then we need to subtract `second part` from `first part` and then when we divide it to 10 and it will give us 10th digit.
 
 If we want to show this as formulate;
 
@@ -25,14 +25,14 @@ Digit eleven is simpler than 10th digit. We just need to sum of 1st, 2nd, 3rd, 4
 
 ```digit_eleven = (1st + 2nd+ 3rd+ 4th+ 5th+ 6th+ 7th+ 8th+ 9th + 10th) / 10```
 
-Than we have some rules;
+Then we have some rules;
 
-* It can't be start with 0.
-* Digits can't be same.
+* It can't start with 0.
+* Digits can't be the same.
 
 ### Regular approach
 
-This is exapmle pulled from here; https://github.com/epigra/tckimlik/blob/master/src/TcKimlik.php which is very simple and effective approach. You can find similar approaches from different languages.
+This is an example  pulled from here; https://github.com/epigra/tckimlik/blob/master/src/TcKimlik.php which is a very simple and effective approach. You can find similar approaches from different languages.
 
 ```php
 public static function verify($input)
@@ -81,16 +81,16 @@ function validateTcKimlikNo($number) {
 }
 ```
 
-Lets examine code and lets start with this part;
+Let's examine code and let's start with this part;
 
 ```php
 if (count(array_unique(array_slice(str_split($number),0,10))) === 1) {
     return false;
 }
 ```
-In this part we will examine given id number is repeated numbers like `11111111111` if its the case it can't be valid.
+In this part we will examine given id number is repeated numbers like `11111111111` if it the case it can't be valid.
 
-`str_split` splitting string to an array. And than we take first 10 digits with `array_slice(str_split($number),0,10)` than we call `array_unique` function which it will give us unique values. if id number consists all same values unique returns only one value.
+`str_split` splitting string to an array. And than we take first 10 digits with `array_slice(str_split($number),0,10)` than we call `array_unique` function which it will give us unique values. if the id number consists of all same values unique returns only one value.
 
 ```php
 $initial = array_slice(str_split($number), 0, 9);
@@ -123,7 +123,7 @@ array:5 [
 ]
 ```
 
-With `array_intersect_key` we can get even digits from id number. In our case `$result` will be;
+With `array_intersect_key` we can get even digits from the id number. In our case `$result` will be;
 
 ```php
 array:5 [
@@ -138,7 +138,7 @@ array:5 [
 ```php
 array_push($initial, (array_sum($result) * 7 - array_sum(array_diff_key($initial, $result))) %10);
 ```
-In this part we will push first part of the algorithm to first 9 digits of id number.
+In this part, we will push the first part of the algorithm to first 9 digits of the id number.
 
 ```php
 array_push($initial, array_sum($initial) % 10);
@@ -149,11 +149,11 @@ We are calculating 11th digit and push it to `$initial` array.
 return (int)implode($initial) === $number;
 ```
 
-Finally we are imploding  `$initial` array and checking is `$initial` is equal to given `$number` variable.
+Finally, we are imploding  `$initial` array and checking is `$initial` is equal to the given `$number` variable.
 
 ### Different languages
 
-There is a lot of libraries that validates turkish id numbers but i also created validation script for `go` and `rust`
+There is a lot of libraries that validates Turkish id numbers but I also created validation script for `go` and `rust`
 
 [Go script](https://github.com/hakanersu/tcvalidate)
 
