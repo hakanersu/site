@@ -16,6 +16,9 @@ class PostController extends Controller
 
     public function index()
     {
+      /**
+       * I'm adding comment here
+       */
         $posts = $this->posts->all()
             ->latest()
             ->paginate(5);
